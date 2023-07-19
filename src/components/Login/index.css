@@ -1,0 +1,33 @@
+.form {
+  height: 400px;
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+  background-color: #2c364c;
+  color: white;
+}
+.error {
+  color: red;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.button1 {
+  background-color: blue;
+  height: 27px;
+  padding: 4px;
+  margin-top: 20px;
+  color: white;
+}
+
+.login_container {
+  background-color: #272727;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

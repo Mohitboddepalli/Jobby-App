@@ -1,0 +1,61 @@
+.company_logo_container1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #2c364c;
+  padding: 40px;
+
+  border-radius: 10px;
+}
+.list_item5 {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.horizontal {
+  color: red;
+  background-color: red;
+}
+.styling {
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.life_at_company_details {
+  display: flex;
+  align-items: flex-start;
+}
+.full_container {
+  background-color: #000000;
+  color: white;
+  padding: 40px;
+}
+
+.list_styling {
+  background-color: #2c364c;
+  list-style-type: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 9px;
+  color: white;
+}
+.heading_styling {
+  font-size: 17px;
+}
+.image6 {
+  height: 200px;
+  width: 400px;
+}
+.list_container {
+  display: flex;
+}
+
+.paragraph {
+  max-width: 40%;
+}
+
+.direction {
+  display: flex;
+  justify-content: space-around;
+}

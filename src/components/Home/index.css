@@ -1,0 +1,26 @@
+.container1 {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+
+  height: 100vh;
+  display: flex;
+
+  align-items: center;
+
+  background-size: cover;
+  color: white;
+  @media screen and (max-width: 786px) {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
+
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+  }
+}
+.content {
+  max-width: 400px;
+  margin: 80px;
+}
+
+h1 {
+  font-size: 50px;
+}

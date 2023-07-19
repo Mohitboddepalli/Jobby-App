@@ -1,0 +1,67 @@
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  width: 350px;
+  height: 200;
+  padding: 10px;
+  border-radius: 10px;
+}
+.list_items1 {
+  list-style-type: none;
+  color: white;
+  background-color: #475569;
+  margin-bottom: 11px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.list_items3 {
+  list-style-type: none;
+  color: white;
+}
+.no_jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.searchButton {
+  background-color: #272727;
+  color: white;
+}
+
+.retryButton {
+  background-color: #6366f1;
+}
+.search {
+  display: flex;
+}
+.container_width {
+  width: 30%;
+}
+
+.adjust {
+  display: flex;
+  padding: 25px;
+}
+.company_logo {
+  height: 50px;
+  margin-right: 7px;
+}
+.company_logo_container {
+  display: flex;
+  align-items: center;
+}
+.whole_container {
+  background-color: #272727;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+.details1 {
+  margin-right: 10px;
+}
+.input {
+  width: 250px;
+}
