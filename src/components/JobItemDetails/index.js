@@ -6,6 +6,12 @@ import {Redirect} from 'react-router-dom'
 
 import Loader from 'react-loader-spinner'
 
+import {MdLocationOn} from 'react-icons/md'
+
+import {AiFillStar} from 'react-icons/ai'
+
+import {BiLinkExternal} from 'react-icons/bi'
+
 import Header from '../Header'
 
 import './index.css'
@@ -92,7 +98,7 @@ class JobItemDetails extends Component {
         alt="failure view"
       />
       <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seem to find the page that you looking for.</p>
+      <p>We cannot seem to find the page you are looking for</p>
       <button className="retryButton" onClick={this.retry} type="button">
         Retry
       </button>
@@ -111,16 +117,22 @@ class JobItemDetails extends Component {
                 <img
                   className="company_logo"
                   src={jobDetails.companyLogoUrl}
-                  alt="company logo"
+                  alt="job details company logo"
                 />
                 <div>
                   <p>{jobDetails.title}</p>
-                  <p>{jobDetails.rating}</p>
+                  <div className="list_container">
+                    <AiFillStar />
+                    <p>{jobDetails.rating}</p>
+                  </div>
                 </div>
               </div>
               <div className="details">
                 <div className="details">
-                  <p className="details1">{jobDetails.location}</p>
+                  <div className="list_container">
+                    <MdLocationOn />
+                    <p className="details1">{jobDetails.location}</p>
+                  </div>
                   <p>{jobDetails.employmentType}</p>
                 </div>
                 <p>{jobDetails.packagePerAnnum}</p>
@@ -128,15 +140,19 @@ class JobItemDetails extends Component {
               <div>
                 <hr className="horizontal" />
               </div>
-
-              <h1 className="heading_styling">Desciption</h1>
+              <div className="description1">
+                <h1 className="heading_styling">Description</h1>
+                <a className="description2" href={jobDetails.companyWebsiteUrl}>
+                  Visit <BiLinkExternal />
+                </a>
+              </div>
               <p>{jobDetails.jobDescription}</p>
             </div>
             <h1 className="heading_styling">Skills</h1>
             <ul className="styling">
               {jobDetails.skills.map(each => (
                 <li key={each.name} className="list_item5">
-                  <img src={each.imageUrl} alt="language logo" />
+                  <img src={each.imageUrl} alt={each.name} />
                   <p>{each.name}</p>
                 </li>
               ))}
@@ -164,7 +180,7 @@ class JobItemDetails extends Component {
                     <img
                       className="company_logo"
                       src={each.companyLogoUrl}
-                      alt="company logo"
+                      alt="similar job company logo"
                     />
                     <div>
                       <p>{each.title}</p>
@@ -186,6 +202,12 @@ class JobItemDetails extends Component {
     )
   }
 
+  inProgressView = () => (
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
+
   renderingView = () => {
     const {status} = this.state
     switch (status) {
@@ -199,12 +221,6 @@ class JobItemDetails extends Component {
         return null
     }
   }
-
-  inProgressView = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-    </div>
-  )
 
   render() {
     const jwtToken = Cookies.get('jwt_token')

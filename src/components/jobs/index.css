@@ -6,6 +6,9 @@
   padding: 10px;
   border-radius: 10px;
 }
+h1 {
+  font-size: 25px;
+}
 .list_items1 {
   list-style-type: none;
   color: white;
@@ -13,6 +16,7 @@
   margin-bottom: 11px;
   border-radius: 10px;
   padding: 10px;
+  text-decoration: none;
 }
 .list_items3 {
   list-style-type: none;
@@ -35,6 +39,7 @@
 }
 .search {
   display: flex;
+  margin-left: 38px;
 }
 .container_width {
   width: 30%;

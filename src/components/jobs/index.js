@@ -7,6 +7,9 @@ import {Link, Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
 import {BsSearch} from 'react-icons/bs'
+import {MdLocationOn} from 'react-icons/md'
+
+import {AiFillStar} from 'react-icons/ai'
 
 import Header from '../Header'
 
@@ -143,6 +146,10 @@ class Jobs extends Component {
     }
   }
 
+  search = () => {
+    this.get()
+  }
+
   searchInputValue = event => {
     this.setState({searchInput: event.target.value})
   }
@@ -233,7 +240,7 @@ class Jobs extends Component {
           alt="no jobs"
         />
         <h1>No Jobs Found</h1>
-        <p>we could not find any jobs.Try other filters</p>
+        <p>We could not find any jobs. Try other filters</p>
       </div>
     ) : (
       <ul>
@@ -245,23 +252,30 @@ class Jobs extends Component {
                   <img
                     className="company_logo"
                     src={each.companyLogoUrl}
-                    alt="logo"
+                    alt="company logo"
                   />
                   <div>
-                    <p>{each.title}</p>
-                    <p>{each.rating}</p>
+                    <h1>{each.title}</h1>
+                    <div className="list_container">
+                      <AiFillStar />
+
+                      <p>{each.rating}</p>
+                    </div>
                   </div>
                 </div>
 
                 <div className="details">
                   <div className="details">
-                    <p className="details1">{each.location}</p>
+                    <div className="list_container">
+                      <MdLocationOn />
+                      <p className="details1">{each.location}</p>
+                    </div>
                     <p>{each.employmentType}</p>
                   </div>
                   <p>{each.packagePerAnnum}</p>
                 </div>
                 <hr />
-                <p>Description</p>
+                <h1>Description</h1>
                 <p>{each.jobDescription}</p>
               </li>
             </Link>
@@ -281,7 +295,7 @@ class Jobs extends Component {
         alt="failure view"
       />
       <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seem to find the page that you looking for.</p>
+      <p>We cannot seem to find the page you are looking for</p>
       <button className="retryButton" onClick={this.retry} type="button">
         Retry
       </button>
@@ -319,9 +333,9 @@ class Jobs extends Component {
               {this.profileRenderingView()}
 
               <hr />
-
               <ul className="list_items3">
-                Type of Employment
+                <h1> Type of Employment</h1>
+
                 {employmentTypesList.map(each => (
                   <li key={each.employmentTypeId} className="list_items3">
                     <input
@@ -337,7 +351,7 @@ class Jobs extends Component {
               <hr />
 
               <ul className="list_items3">
-                Salary Range
+                <h1>Salary Range</h1>
                 {salaryRangesList.map(each => (
                   <li key={each.salaryRangeId} className="list_items3">
                     <input
@@ -359,12 +373,8 @@ class Jobs extends Component {
                   className="input searchButton"
                   onKeyDown={this.enterInputValue}
                 />
-                <button
-                  onClick={this.search}
-                  type="button"
-                  data-testid="searchButton"
-                >
-                  <BsSearch className="search-icon" />
+                <button type="button" data-testid="searchButton">
+                  <BsSearch onClick={this.search} className="search-icon" />
                 </button>
               </div>
               {this.renderingView()}

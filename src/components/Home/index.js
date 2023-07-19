@@ -2,7 +2,7 @@ import {Component} from 'react'
 
 import Cookies from 'js-cookie'
 
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 import Header from '../Header'
 
@@ -24,15 +24,17 @@ class Home extends Component {
         <Header />
         <div className="container1">
           <div className="content">
-            <h1>Find the job that fits your Life</h1>
+            <h1>Find The Job That Fits Your Life.</h1>
             <p>
               Millions of people are searching for jobs,salary, information,
               company reviews. Find the job that fits your abilties and
               potential.
             </p>
-            <button onClick={this.findJobs} type="button">
-              Find Jobs
-            </button>
+            <Link to="/jobs">
+              <button onClick={this.findJobs} type="button">
+                Find Jobs
+              </button>
+            </Link>
           </div>
         </div>
       </div>

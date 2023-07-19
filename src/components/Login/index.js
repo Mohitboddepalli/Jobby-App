@@ -46,7 +46,7 @@ class Login extends Component {
   }
 
   render() {
-    const {error} = this.state
+    const {error, username, password} = this.state
 
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
@@ -66,6 +66,7 @@ class Login extends Component {
           <input
             placeholder="Username"
             onChange={this.userInput}
+            value={username}
             type="text"
             id="user"
           />
@@ -75,13 +76,14 @@ class Login extends Component {
             placeholder="Password"
             onChange={this.password}
             type="password"
+            value={password}
             id="password"
           />
 
           <button className="button1" type="submit">
             Login
           </button>
-          <p className="error">*{error}</p>
+          <p className="error">{error}</p>
         </form>
       </div>
     )

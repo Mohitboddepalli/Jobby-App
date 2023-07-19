@@ -49,6 +49,16 @@
 }
 .list_container {
   display: flex;
+  align-items: center;
+}
+.description2 {
+  display: flex;
+  align-items: center;
+}
+.description1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .paragraph {
